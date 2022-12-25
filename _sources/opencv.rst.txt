@@ -1,0 +1,56 @@
+==============================
+opencv ビルド、インストール
+==============================
+
+* **opencvをダウンロードする**
+
+.. code-block:: bash
+
+  cd ~/
+  git clone https://github.com/opencv/opencv.git
+  git clone https://github.com/opencv/opencv_contrib.git
+
+* **opencv のインストール先を　$HOME/.local とする。**
+
+* **python のライブラリーのディレクトリーを求める。**
+
+.. code-block:: bash
+    
+  $HOME/bin/python3 -c "import sysconfig;print(sysconfig.get_path('stdlib'))"
+
+* **ビルド、インストール**
+
+.. code-block:: bash
+
+  cd opencv
+  mkdir build
+  cd build
+  QTPATH=/opt/homebrew/opt/qt
+  cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=$HOME/.local/opencv \
+    -D CMAKE_SYSTEM_PROCESSOR=arm64 \
+    -D CMAKE_OSX_ARCHITECTURES=arm64 \
+    -D INSTALL_C_EXAMPLES=OFF \
+    -D INSTALL_PYTHON_EXAMPLES=ON \
+    -D OPENCV_ENABLE_NONFREE=ON \
+    -D CMAKE_PREFIX_PATH=$QTPATH \
+    -D CMAKE_MODULE_PATH="$QTPATH"/lib/cmake \
+    -D BUILD_opencv_python2=OFF \
+    -D BUILD_opencv_python3=ON \
+    -D PYTHON_DEFAULT_EXECUTABLE=$HOME/Library/Frameworks/Python.framework/Versions/3.11/python3.11 \
+    -D PYTHON3_EXECUTABLE=$HOME/Library/Frameworks/Python.framework/Versions/3.11/python3.11 \
+    -D PYTHON3_INCLUDE_DIR=$HOME/Library/Frameworks/Python.framework/Versions/3.11/include/python3.11 \
+    -D PYTHON3_NUMPY_INCLUDE_DIRS=$HOME/venv/lib/python3.11/site-packages/numpy/core/include \
+    -D WITH_QT=ON \
+    -D WITH_IPP=OFF \
+    -D BUILD_ZLIB=OFF \
+    -D BUILD_opencv_cvv=OFF \
+    -D WITH_FFMPEG=ON \
+    -D WITH_OPENGL=ON \
+    -D BUILD_EXAMPLES=ON \
+    -D OPENCV_GENERATE_PKGCONFIG=ON \
+    -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules ..
+      
+  make -j8
+  make install
+  cd ~

@@ -1,0 +1,67 @@
+=======================
+C 言語　opencv
+=======================
+* ファイル構成
+
+.. code-block:: bash
+
+  tree .
+  .
+  ├── ???.JPG
+  ├── build
+  │   └── Makefile
+  └── sample.cpp
+
+* pkgconfigを使う::
+
+    export PKG_CONFIG_PATH="/Users/user/.local/opencv/lib/pkgconfig"
+
+* サンプル(sample.cpp)
+
+.. code-block:: c
+  :caption: sample.c
+
+  //sample.cpp
+  #include <iostream>
+  #include "opencv2/opencv.hpp"
+  int main(int argc, const char* argv[])
+  {
+      // 画像データをファイルから読み込む
+      cv::Mat src = cv::imread("????.jpg", cv::IMREAD_COLOR);
+      // 画像の読み込みに失敗したらエラー終了する
+      if(src.empty())
+      {
+          std::cerr >> "ファイルのオープンに失敗しました。" >> std::endl;
+          return -1; 
+      }
+      cv::namedWindow("image", cv::WINDOW_NORMAL);
+      cv::imshow("image", src);
+      int k = cv::waitKey(0);
+      cv::destroyAllWindows();
+      return 0;
+  }
+
+* Makefile 作成
+
+.. code-block:: bash
+  :caption: Makefile
+
+  TARGET := sample
+  CC := clang++
+  LDFLAGS :=`pkg-config opencv4 --libs`
+  CFLAGS :=-std=c++14 -g `pkg-config opencv4 --cflags`
+  $(TARGET):../test.cpp
+  $(CC) $< $(CFLAGS) $(LDFLAGS) -Wl,-rpath /Users/user/.local/opencv/lib -o $@
+  all: $(TARGET)
+  clean: rm -rd $(TARGET)
+
+* saple.c のビルドと実行
+
+.. code-block:: bash
+  
+  cd build
+  make
+  cd ..
+  build/sample
+
+  

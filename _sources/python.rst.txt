@@ -1,0 +1,35 @@
+=============================
+python ビルド、インストール
+=============================
+
+* Command Line Tool for Xcodeをインストール: ``xcode-select --install``
+* homebrew_ をインストール  
+* ``brew install xz gdbm openssl tck-tk qt cmake``
+
+* python_ からソースファイルをダウンロード
+* build & install
+
+  * ダウンロードしたディレクトリ Python-3.11.x に移動する。
+  * インストール先は　$HOME/Library/Frameworls とする。
+  * 下記のコマンドをタイプする。
+
+  .. code-block:: bash
+
+   export LDFLAGS="-L/opt/homebrew/opt/xz/lib"
+   export LDFLAGS="-L/opt/homebrew/opt/gdbm/lib $LDFLAGS"
+   export CPPFLAGS="-I/opt/homebrew/opt/xz/include"
+   export CPPFLAGS="-I/opt/homebrew/opt/gdbm/include $CPPFLAGS"
+   export PKG_CONFIG_PATH="/opt/homebrew/opt/tcl-tk/lib/pkgconfig"
+   ./configure --enable-framework=$HOME/Library/Frameworks \
+   --enable-optimizations \
+   --with-openssl=/opt/homebrew/opt/openssl
+   make -j8
+   make install
+
+| これによって
+| $HOME/Frameworks にフレームワーク自体がインストールされる。
+| $HOME/Applications のサブディレクトリにアプリケーションがイントスールされる。
+| $HOME/binにコマンドラインツールがインストールされる。
+
+.. _python: https://www.python.org/
+.. _homebrew: https://brew.sh/index_ja
