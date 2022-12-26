@@ -10,7 +10,7 @@ python ビルド、インストール
 * build & install
 
   * ダウンロードしたディレクトリ Python-3.11.x に移動する。
-  * インストール先は　$HOME/Library/Frameworls とする。
+  * インストール先は　$HOME/Library/Frameworks とする。
   * 下記のコマンドをタイプする。
 
   .. code-block:: bash
