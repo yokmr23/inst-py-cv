@@ -40,7 +40,7 @@ opencv ビルド、インストール
     -D PYTHON_DEFAULT_EXECUTABLE=$HOME/Library/Frameworks/Python.framework/Versions/3.11/python3.11 \
     -D PYTHON3_EXECUTABLE=$HOME/Library/Frameworks/Python.framework/Versions/3.11/python3.11 \
     -D PYTHON3_INCLUDE_DIR=$HOME/Library/Frameworks/Python.framework/Versions/3.11/include/python3.11 \
-    -D PYTHON3_NUMPY_INCLUDE_DIRS=$HOME/venv/lib/python3.11/site-packages/numpy/core/include \
+    -D PYTHON3_NUMPY_INCLUDE_DIRS=$HOME/venv1/lib/python3.11/site-packages/numpy/core/include \
     -D WITH_QT=ON \
     -D WITH_IPP=OFF \
     -D BUILD_ZLIB=OFF \
