@@ -41,6 +41,8 @@ cv2 モジュール
 
 * python3 を起動して、cv2 を確認する。
 
+.. code-block:: shell
+    
 >>> import cv2
 >>> cv2.__version__
 '4.6.0-dev'

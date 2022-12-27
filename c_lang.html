@@ -217,8 +217,8 @@
 <li><p>サンプル(sample.cpp)</p></li>
 </ul>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">sample.c</span><a class="headerlink" href="#id1" title="このコードへのパーマリンク">#</a></div>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//sample.cpp</span>
+<div class="code-block-caption"><span class="caption-text">sample.cpp</span><a class="headerlink" href="#id1" title="このコードへのパーマリンク">#</a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//sample.cpp</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;opencv2/opencv.hpp&quot;</span><span class="cp"></span>
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"></span>
@@ -245,7 +245,7 @@
 </ul>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">Makefile</span><a class="headerlink" href="#id2" title="このコードへのパーマリンク">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>TARGET :<span class="o">=</span> sample
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>TARGET :<span class="o">=</span> sample
 CC :<span class="o">=</span> clang++
 LDFLAGS :<span class="o">=</span><span class="sb">`</span>pkg-config opencv4 --libs<span class="sb">`</span>
 CFLAGS :<span class="o">=</span>-std<span class="o">=</span>c++14 -g <span class="sb">`</span>pkg-config opencv4 --cflags<span class="sb">`</span>

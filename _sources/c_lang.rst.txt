@@ -18,8 +18,8 @@ C 言語　opencv
 
 * サンプル(sample.cpp)
 
-.. code-block:: c
-  :caption: sample.c
+.. code-block:: cpp
+  :caption: sample.cpp
 
   //sample.cpp
   #include <iostream>
@@ -43,7 +43,7 @@ C 言語　opencv
 
 * Makefile 作成
 
-.. code-block:: bash
+.. code-block:: shell
   :caption: Makefile
 
   TARGET := sample
