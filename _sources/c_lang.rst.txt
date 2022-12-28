@@ -4,7 +4,8 @@ C 言語　opencv
 * ファイル構成
 
 .. code-block:: bash
-
+  :caption: shell
+  
   tree .
   .
   ├── ???.JPG

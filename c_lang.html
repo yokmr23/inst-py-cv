@@ -200,6 +200,8 @@
 <ul class="simple">
 <li><p>ファイル構成</p></li>
 </ul>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">shell</span><a class="headerlink" href="#id1" title="このコードへのパーマリンク">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tree .
 .
 ├── ???.JPG
@@ -207,6 +209,7 @@
 │   └── Makefile
 └── sample.cpp
 </pre></div>
+</div>
 </div>
 <ul>
 <li><p>pkgconfigを使う:</p>
@@ -216,8 +219,8 @@
 </li>
 <li><p>サンプル(sample.cpp)</p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">sample.cpp</span><a class="headerlink" href="#id1" title="このコードへのパーマリンク">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">sample.cpp</span><a class="headerlink" href="#id2" title="このコードへのパーマリンク">#</a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//sample.cpp</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;opencv2/opencv.hpp&quot;</span><span class="cp"></span>
@@ -243,8 +246,8 @@
 <ul class="simple">
 <li><p>Makefile 作成</p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Makefile</span><a class="headerlink" href="#id2" title="このコードへのパーマリンク">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Makefile</span><a class="headerlink" href="#id3" title="このコードへのパーマリンク">#</a></div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>TARGET :<span class="o">=</span> sample
 CC :<span class="o">=</span> clang++
 LDFLAGS :<span class="o">=</span><span class="sb">`</span>pkg-config opencv4 --libs<span class="sb">`</span>
