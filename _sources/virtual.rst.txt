@@ -3,6 +3,7 @@
 =======================
 .. code-block:: shell
   :caption: shell
+  
   cd $HOME
   ./bin/python3 -m venv venv1
   ./venv1/bin/activate
