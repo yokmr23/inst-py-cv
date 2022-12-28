@@ -16,16 +16,16 @@ python ビルド、インストール
   .. code-block:: bash
     :caption: shell
 
-   export LDFLAGS="-L/opt/homebrew/opt/xz/lib"
-   export LDFLAGS="-L/opt/homebrew/opt/gdbm/lib $LDFLAGS"
-   export CPPFLAGS="-I/opt/homebrew/opt/xz/include"
-   export CPPFLAGS="-I/opt/homebrew/opt/gdbm/include $CPPFLAGS"
-   export PKG_CONFIG_PATH="/opt/homebrew/opt/tcl-tk/lib/pkgconfig"
-   ./configure --enable-framework=$HOME/Library/Frameworks \
-   --enable-optimizations \
-   --with-openssl=/opt/homebrew/opt/openssl
-   make -j8
-   make install
+    export LDFLAGS="-L/opt/homebrew/opt/xz/lib"
+    export LDFLAGS="-L/opt/homebrew/opt/gdbm/lib $LDFLAGS"
+    export CPPFLAGS="-I/opt/homebrew/opt/xz/include"
+    export CPPFLAGS="-I/opt/homebrew/opt/gdbm/include $CPPFLAGS"
+    export PKG_CONFIG_PATH="/opt/homebrew/opt/tcl-tk/lib/pkgconfig"
+    ./configure --enable-framework=$HOME/Library/Frameworks \
+    --enable-optimizations \
+    --with-openssl=/opt/homebrew/opt/openssl
+    make -j8
+    make install
 
 | これによって
 | $HOME/Frameworks にフレームワーク自体がインストールされる。
