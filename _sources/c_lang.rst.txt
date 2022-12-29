@@ -1,7 +1,7 @@
 =======================
 C 言語　opencv
 =======================
-* ファイル構成
+* **ファイル構成**
 
 .. code-block:: bash
   :caption: shell
@@ -13,11 +13,13 @@ C 言語　opencv
   │   └── Makefile
   └── sample.cpp
 
-* pkgconfigを使う::
+* **pkgconfigを使う**
 
-    export PKG_CONFIG_PATH="/Users/user/.local/opencv/lib/pkgconfig"
+.. code-block::
+  
+  export PKG_CONFIG_PATH="/Users/user/.local/opencv/lib/pkgconfig"
 
-* サンプル(sample.cpp)
+* **サンプル(sample.cpp)**
 
 .. code-block:: cpp
   :caption: sample.cpp
@@ -42,7 +44,7 @@ C 言語　opencv
       return 0;
   }
 
-* Makefile 作成
+* **Makefile 作成**
 
 .. code-block:: shell
   :caption: Makefile
@@ -56,7 +58,7 @@ C 言語　opencv
   all: $(TARGET)
   clean: rm -rd $(TARGET)
 
-* saple.c のビルドと実行
+* **saple.c のビルドと実行**
 
 .. code-block:: bash
   
