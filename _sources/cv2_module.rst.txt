@@ -1,7 +1,7 @@
 =====================
 cv2 モジュール
 =====================
-* 仮想環境に入り、buildをインストールする。
+* **仮想環境で、モジュールbuildをインストールする。**
 
 .. code-block:: bash
     :caption: shell
@@ -10,14 +10,14 @@ cv2 モジュール
     source venv/bin/activate
     pip install build
 
-* cv2のモジュールがインストールされているディレクトリーに移動して、ビルドする。::
+* **cv2のモジュールがインストールされているディレクトリーに移動して、ビルドする。::**
 
     cd ~/.local/opencv/lib/python3.11/site-packages/
     python -m build
     dist ディレクトリが作られ、下記の2つのファイルが生成される。
     opencv-4.6.0-py3-none-any.whl opencv-4.6.0.tar.gz
 
-* pip でcv2をインストールする前に、cv2 ディレクトリにある ``config-3.11.py`` と　``config.py`` の内容を変更する。
+* **pip でcv2をインストールする前に、cv2 ディレクトリにある config-3.11.py と　config.py の内容を変更する。**
 
 .. code-block:: python
     :caption: config-3.11.py を書き換える
@@ -34,13 +34,13 @@ cv2 モジュール
     '/Users/user/.local/opencv/lib/'
     ] + BINARIES_PATHS
 
-* cv2モジュールをインストールする
+* **cv2モジュールをインストールする**
 
 .. code-block:: shell
 
  pip install dist/opencv-4.6.0-py3-none-any.whl
 
-* python3 を起動して、cv2 を確認する。
+* **python3 を起動して、cv2 を確認する。**
 
 .. code-block:: python
   :caption: python

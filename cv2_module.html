@@ -198,7 +198,7 @@
           <section id="cv2">
 <h1>cv2 モジュール<a class="headerlink" href="#cv2" title="この見出しへのパーマリンク">#</a></h1>
 <ul class="simple">
-<li><p>仮想環境に入り、buildをインストールする。</p></li>
+<li><p><strong>仮想環境で、モジュールbuildをインストールする。</strong></p></li>
 </ul>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">shell</span><a class="headerlink" href="#id1" title="このコードへのパーマリンク">#</a></div>
@@ -209,15 +209,15 @@ pip install build
 </div>
 </div>
 <ul>
-<li><p>cv2のモジュールがインストールされているディレクトリーに移動して、ビルドする。:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd ~/.local/opencv/lib/python3.11/site-packages/
+<li><p><strong>cv2のモジュールがインストールされているディレクトリーに移動して、ビルドする。::</strong></p>
+<blockquote>
+<div><p>cd ~/.local/opencv/lib/python3.11/site-packages/
 python -m build
 dist ディレクトリが作られ、下記の2つのファイルが生成される。
-opencv-4.6.0-py3-none-any.whl opencv-4.6.0.tar.gz
-</pre></div>
-</div>
+opencv-4.6.0-py3-none-any.whl opencv-4.6.0.tar.gz</p>
+</div></blockquote>
 </li>
-<li><p>pip でcv2をインストールする前に、cv2 ディレクトリにある <code class="docutils literal notranslate"><span class="pre">config-3.11.py</span></code> と　<code class="docutils literal notranslate"><span class="pre">config.py</span></code> の内容を変更する。</p></li>
+<li><p><strong>pip でcv2をインストールする前に、cv2 ディレクトリにある config-3.11.py と　config.py の内容を変更する。</strong></p></li>
 </ul>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">config-3.11.py を書き換える</span><a class="headerlink" href="#id2" title="このコードへのパーマリンク">#</a></div>
@@ -237,13 +237,13 @@ opencv-4.6.0-py3-none-any.whl opencv-4.6.0.tar.gz
 </div>
 </div>
 <ul class="simple">
-<li><p>cv2モジュールをインストールする</p></li>
+<li><p><strong>cv2モジュールをインストールする</strong></p></li>
 </ul>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install dist/opencv-4.6.0-py3-none-any.whl
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>python3 を起動して、cv2 を確認する。</p></li>
+<li><p><strong>python3 を起動して、cv2 を確認する。</strong></p></li>
 </ul>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">python</span><a class="headerlink" href="#id4" title="このコードへのパーマリンク">#</a></div>
