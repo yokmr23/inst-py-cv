@@ -208,33 +208,36 @@ pip install build
 </pre></div>
 </div>
 </div>
-<ul>
-<li><p><strong>cv2のモジュールがインストールされているディレクトリーに移動して、ビルドする。::</strong></p>
-<blockquote>
-<div><p>cd ~/.local/opencv/lib/python3.11/site-packages/
-python -m build
-dist ディレクトリが作られ、下記の2つのファイルが生成される。
-opencv-4.6.0-py3-none-any.whl opencv-4.6.0.tar.gz</p>
-</div></blockquote>
-</li>
+<ul class="simple">
 <li><p><strong>pip でcv2をインストールする前に、cv2 ディレクトリにある config-3.11.py と　config.py の内容を変更する。</strong></p></li>
 </ul>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">config-3.11.py を書き換える</span><a class="headerlink" href="#id2" title="このコードへのパーマリンク">#</a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">PYTHON_EXTENSIONS_PATHS</span> <span class="o">=</span> <span class="p">[</span>
-<span class="s1">&#39;/Users/user/.local/opencv/lib/python3.11/site-packages/cv2/python-3.11&#39;</span>
-<span class="p">]</span> <span class="o">+</span> <span class="n">PYTHON_EXTENSIONS_PATHS</span>
+<div class="code-block-caption"><span class="caption-text">config.py</span><a class="headerlink" href="#id2" title="このコードへのパーマリンク">#</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">BINARIES_PATHS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;/Users/kimura/.local/opencv/lib&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">BINARIES_PATHS</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">config.py を書き換える</span><a class="headerlink" href="#id3" title="このコードへのパーマリンク">#</a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">BINARIES_PATHS</span> <span class="o">=</span> <span class="p">[</span>
-<span class="s1">&#39;/Users/user/.local/opencv/lib/&#39;</span>
-<span class="p">]</span> <span class="o">+</span> <span class="n">BINARIES_PATHS</span>
+<div class="code-block-caption"><span class="caption-text">config-3.11.py</span><a class="headerlink" href="#id3" title="このコードへのパーマリンク">#</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PYTHON_EXTENSIONS_PATHS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;/Users/kimura/.local/opencv/lib/python3.11/site-packages/cv2/python-3.11&#39;</span>
+    <span class="p">]</span> <span class="o">+</span> <span class="n">PYTHON_EXTENSIONS_PATHS</span>
 </pre></div>
 </div>
+</div>
+<ul class="simple">
+<li><p><strong>cv2のモジュールがインストールされているディレクトリーに移動して、ビルドする。</strong></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd ~/.local/opencv/lib/python3.11/site-packages/
+python -m build
+
+dist ディレクトリが作られ、下記の2つのファイルが生成される。
+
+opencv-4.6.0-py3-none-any.whl opencv-4.6.0.tar.gz
+</pre></div>
 </div>
 <ul class="simple">
 <li><p><strong>cv2モジュールをインストールする</strong></p></li>

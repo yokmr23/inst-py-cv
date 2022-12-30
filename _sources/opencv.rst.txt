@@ -56,3 +56,7 @@ opencv ビルド、インストール
   make -j8
   make install
   cd ~
+
+* **cmake後下記のように出力されればOK**
+
+.. image:: ../6E33BDAB-1548-4034-AA29-F8D651C783D1.jpeg
