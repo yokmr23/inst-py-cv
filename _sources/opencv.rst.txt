@@ -5,9 +5,9 @@ opencv ビルド、インストール
 * **opencvをダウンロードする**
 
 .. code-block:: bash
-  :caption: shell
+  :caption: ワーキングディレクトリ(~/Downloads)にクローンする
   
-  cd ~/
+  cd ~/Downloads
   git clone https://github.com/opencv/opencv.git
   git clone https://github.com/opencv/opencv_contrib.git
 
