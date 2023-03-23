@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="索引" href="genindex.html" /><link rel="search" title="検索" href="search.html" /><link rel="next" title="cv2 モジュール" href="cv2_module.html" /><link rel="prev" title="仮想環境の作成" href="virtual.html" />
 
-    <!-- Generated with Sphinx 6.0.0 and Furo 2022.12.07 -->
+    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
         <title>opencv ビルド、インストール - Install opencv &amp; python .1 ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -202,9 +202,9 @@
 </ul>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">ワーキングディレクトリ(~/Downloads)にクローンする</span><a class="headerlink" href="#id1" title="このコードへのパーマリンク">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/Downloads
-git clone https://github.com/opencv/opencv.git
-git clone https://github.com/opencv/opencv_contrib.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/Downloads
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/opencv/opencv.git
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/opencv/opencv_contrib.git
 </pre></div>
 </div>
 </div>
@@ -212,7 +212,7 @@ git clone https://github.com/opencv/opencv_contrib.git
 <li><p><strong>opencv のインストール先を　$HOME/.local とする。</strong></p></li>
 <li><p><strong>python のライブラリーのディレクトリーを求める。</strong></p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$HOME</span>/bin/python3 -c <span class="s2">&quot;import sysconfig;print(sysconfig.get_path(&#39;stdlib&#39;))&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$HOME</span>/bin/python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import sysconfig;print(sysconfig.get_path(&#39;stdlib&#39;))&quot;</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -220,38 +220,38 @@ git clone https://github.com/opencv/opencv_contrib.git
 </ul>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">shell</span><a class="headerlink" href="#id2" title="このコードへのパーマリンク">#</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> opencv
-mkdir build
-<span class="nb">cd</span> build
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>opencv
+mkdir<span class="w"> </span>build
+<span class="nb">cd</span><span class="w"> </span>build
 <span class="nv">QTPATH</span><span class="o">=</span>/opt/homebrew/opt/qt
-cmake -D <span class="nv">CMAKE_BUILD_TYPE</span><span class="o">=</span>RELEASE <span class="se">\</span>
-  -D <span class="nv">CMAKE_INSTALL_PREFIX</span><span class="o">=</span><span class="nv">$HOME</span>/.local/opencv <span class="se">\</span>
-  -D <span class="nv">CMAKE_SYSTEM_PROCESSOR</span><span class="o">=</span>arm64 <span class="se">\</span>
-  -D <span class="nv">CMAKE_OSX_ARCHITECTURES</span><span class="o">=</span>arm64 <span class="se">\</span>
-  -D <span class="nv">INSTALL_C_EXAMPLES</span><span class="o">=</span>OFF <span class="se">\</span>
-  -D <span class="nv">INSTALL_PYTHON_EXAMPLES</span><span class="o">=</span>ON <span class="se">\</span>
-  -D <span class="nv">OPENCV_ENABLE_NONFREE</span><span class="o">=</span>ON <span class="se">\</span>
-  -D <span class="nv">CMAKE_PREFIX_PATH</span><span class="o">=</span><span class="nv">$QTPATH</span> <span class="se">\</span>
-  -D <span class="nv">CMAKE_MODULE_PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$QTPATH</span><span class="s2">&quot;</span>/lib/cmake <span class="se">\</span>
-  -D <span class="nv">BUILD_opencv_python2</span><span class="o">=</span>OFF <span class="se">\</span>
-  -D <span class="nv">BUILD_opencv_python3</span><span class="o">=</span>ON <span class="se">\</span>
-  -D <span class="nv">PYTHON_DEFAULT_EXECUTABLE</span><span class="o">=</span><span class="nv">$HOME</span>/Library/Frameworks/Python.framework/Versions/3.11/python3.11 <span class="se">\</span>
-  -D <span class="nv">PYTHON3_EXECUTABLE</span><span class="o">=</span><span class="nv">$HOME</span>/Library/Frameworks/Python.framework/Versions/3.11/python3.11 <span class="se">\</span>
-  -D <span class="nv">PYTHON3_INCLUDE_DIR</span><span class="o">=</span><span class="nv">$HOME</span>/Library/Frameworks/Python.framework/Versions/3.11/include/python3.11 <span class="se">\</span>
-  -D <span class="nv">PYTHON3_NUMPY_INCLUDE_DIRS</span><span class="o">=</span><span class="nv">$HOME</span>/venv1/lib/python3.11/site-packages/numpy/core/include <span class="se">\</span>
-  -D <span class="nv">WITH_QT</span><span class="o">=</span>ON <span class="se">\</span>
-  -D <span class="nv">WITH_IPP</span><span class="o">=</span>OFF <span class="se">\</span>
-  -D <span class="nv">BUILD_ZLIB</span><span class="o">=</span>OFF <span class="se">\</span>
-  -D <span class="nv">BUILD_opencv_cvv</span><span class="o">=</span>OFF <span class="se">\</span>
-  -D <span class="nv">WITH_FFMPEG</span><span class="o">=</span>ON <span class="se">\</span>
-  -D <span class="nv">WITH_OPENGL</span><span class="o">=</span>ON <span class="se">\</span>
-  -D <span class="nv">BUILD_EXAMPLES</span><span class="o">=</span>ON <span class="se">\</span>
-  -D <span class="nv">OPENCV_GENERATE_PKGCONFIG</span><span class="o">=</span>ON <span class="se">\</span>
-  -D <span class="nv">OPENCV_EXTRA_MODULES_PATH</span><span class="o">=</span>../../opencv_contrib/modules ..
+cmake<span class="w"> </span>-D<span class="w"> </span><span class="nv">CMAKE_BUILD_TYPE</span><span class="o">=</span>RELEASE<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">CMAKE_INSTALL_PREFIX</span><span class="o">=</span><span class="nv">$HOME</span>/.local/opencv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">CMAKE_SYSTEM_PROCESSOR</span><span class="o">=</span>arm64<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">CMAKE_OSX_ARCHITECTURES</span><span class="o">=</span>arm64<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">INSTALL_C_EXAMPLES</span><span class="o">=</span>OFF<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">INSTALL_PYTHON_EXAMPLES</span><span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">OPENCV_ENABLE_NONFREE</span><span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">CMAKE_PREFIX_PATH</span><span class="o">=</span><span class="nv">$QTPATH</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">CMAKE_MODULE_PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$QTPATH</span><span class="s2">&quot;</span>/lib/cmake<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">BUILD_opencv_python2</span><span class="o">=</span>OFF<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">BUILD_opencv_python3</span><span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">PYTHON_DEFAULT_EXECUTABLE</span><span class="o">=</span><span class="nv">$HOME</span>/Library/Frameworks/Python.framework/Versions/3.11/python3.11<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">PYTHON3_EXECUTABLE</span><span class="o">=</span><span class="nv">$HOME</span>/Library/Frameworks/Python.framework/Versions/3.11/python3.11<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">PYTHON3_INCLUDE_DIR</span><span class="o">=</span><span class="nv">$HOME</span>/Library/Frameworks/Python.framework/Versions/3.11/include/python3.11<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">PYTHON3_NUMPY_INCLUDE_DIRS</span><span class="o">=</span><span class="nv">$HOME</span>/venv1/lib/python3.11/site-packages/numpy/core/include<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">WITH_QT</span><span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">WITH_IPP</span><span class="o">=</span>OFF<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">BUILD_ZLIB</span><span class="o">=</span>OFF<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">BUILD_opencv_cvv</span><span class="o">=</span>OFF<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">WITH_FFMPEG</span><span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">WITH_OPENGL</span><span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">BUILD_EXAMPLES</span><span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">OPENCV_GENERATE_PKGCONFIG</span><span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-D<span class="w"> </span><span class="nv">OPENCV_EXTRA_MODULES_PATH</span><span class="o">=</span>../../opencv_contrib/modules<span class="w"> </span>..
 
-make -j8
-make install
-<span class="nb">cd</span> ~
+make<span class="w"> </span>-j8
+make<span class="w"> </span>install
+<span class="nb">cd</span><span class="w"> </span>~
 </pre></div>
 </div>
 </div>
@@ -290,7 +290,7 @@ make install
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2022, Y.Kimura
+                Copyright &#169; 2023, Y.Kimura
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             

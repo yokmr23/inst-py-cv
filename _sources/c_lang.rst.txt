@@ -58,7 +58,7 @@ C 言語　opencv
   all: $(TARGET)
   clean: rm -rd $(TARGET)
 
-* **saple.c のビルドと実行**
+* **sample.c のビルドと実行**
 
 .. code-block:: bash
   
